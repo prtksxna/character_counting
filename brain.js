@@ -2,6 +2,7 @@ fitText = function ( text, $el, height ) {
 	var words = text.split( ' ' );
 	var gap = 0;
 	var prevHeight = 0;
+	var now = new Date().getTime();
 
 	for( var i = 0; i < words.length; i++ ) {
 		gap = ( $el.outerHeight() - prevHeight === 0 ) ? gap : $el.outerHeight() - prevHeight;
@@ -11,7 +12,11 @@ fitText = function ( text, $el, height ) {
 		$el.append( ' ' );
 	}
 
-	$el.prev().text( i + ' words in ' + $el.outerHeight() + 'px');
+	var then = now;
+	now = new Date().getTime();
+	var duration = now - then;
+
+	$el.prev().text( 'Fit ' + i + ' words in ' + $el.outerHeight() + 'px in ' + duration + 'ms');
 
 	$el
 		.outerHeight( height )
