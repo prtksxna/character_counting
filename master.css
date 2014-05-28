@@ -1,0 +1,33 @@
+body {
+	background: #eee;
+	font: 15px sans-serif;
+}
+
+td {
+	padding: 20px;
+	vertical-align: top;
+}
+
+small {
+	display: block;
+	margin-top: -20px;
+	margin-bottom: 10px;
+}
+
+.box {
+	background: #fff;
+	padding: 16px;
+	border: 1px solid #ccc;
+}
+
+#small_box {
+	width: 150px;
+}
+
+#medium_box {
+	width: 200px;
+}
+
+#landscape_box {
+	width: 400px;
+}
