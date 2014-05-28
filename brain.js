@@ -11,6 +11,8 @@ fitText = function ( text, $el, height ) {
 		$el.append( ' ' );
 	}
 
+	$el.prev().text( i + ' words in ' + $el.outerHeight() + 'px');
+
 	$el
 		.outerHeight( height )
 		.append( '&hellip;' );
