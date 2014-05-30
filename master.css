@@ -31,7 +31,7 @@ button {
 }
 
 .rtl {
-	text-align: right;
+	direction: rtl;
 }
 
 .box {
