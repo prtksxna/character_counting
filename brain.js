@@ -12,7 +12,12 @@ fitText = function ( text, $el, height ) {
 		gap = ( $el.outerHeight() - prevHeight === 0 ) ? gap : $el.outerHeight() - prevHeight;
 		prevHeight = $el.outerHeight();
 		$el.append( words[ i ] );
-		if ( $el.outerHeight() > height-gap ) break;
+		if ( $el.outerHeight() > height-gap ) {
+			if ( i < (words.length - 1 ) ){
+				$el.append( '&hellip;' );
+			}
+			break;
+		}
 		$el.append( ' ' );
 	}
 
@@ -22,9 +27,7 @@ fitText = function ( text, $el, height ) {
 
 	$el.prev().text( 'Fit ' + i + ' words in ' + $el.outerHeight() + 'px in ' + duration + 'ms');
 
-	$el
-		.outerHeight( height )
-		.append( '&hellip;' );
+	$el.outerHeight( height );
 };
 
 $( function () {
